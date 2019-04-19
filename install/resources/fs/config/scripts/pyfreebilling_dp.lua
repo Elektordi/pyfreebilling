@@ -628,7 +628,7 @@ if (session:ready() == true) then
     log("RATE NOT FOUND! : ", "Exiting", "warning")
     session:hangup("BEARERCAPABILITY_NOTAVAIL")
   else
-    rate["rate"] = tonumber(rate["rate"])*(1-tonumber(rate["discount"])/100)
+    rate["rate"] = tonumber(rate["rate"])*(1-tonumber(rate["discount"]))
     rate["minimal"] = tonumber(rate["minimal_time"]) * tonumber(rate["rate"] / 60) + tonumber(rate["init_block"])
     log("Rate", "OK", "debug")
     set_variable("sell_rate", tonumber(rate["rate"]))
